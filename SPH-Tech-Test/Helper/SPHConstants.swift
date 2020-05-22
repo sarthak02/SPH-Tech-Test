@@ -8,7 +8,7 @@
 
 import Foundation
 struct SPHConstants {
-    static var enableMockData: Bool = true
+    static var enableMockData: Bool = false
 }
 //MARK:- Load Mock Data
 func load<T: Decodable>(_ filename: String) -> T {

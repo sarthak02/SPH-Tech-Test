@@ -42,21 +42,29 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "YearDataTableViewCell") as! YearDataTableViewCell
+        cell.delegate = self
         cell.setData(data: self.yearsUsageArray[indexPath.row])
         return cell
     }
 }
 extension ViewController: ViewControllerInput {
     func refreshUsageView(data: [YearDataModel]) {
-        MBProgressHUD.hide(for: self.view, animated: true)
         self.yearsUsageArray = data
-        self.tableView.reloadData()
+        DispatchQueue.main.async {
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.tableView.reloadData()
+        }
     }
     func getUserDataFailed(error: String) {
         DispatchQueue.main.async {
             MBProgressHUD.hide(for: self.view, animated: true)
             self.showAlert(title: "Error", message: error)
         }
+    }
+}
+extension ViewController: YearDataCellDelegate {
+    func dataDownfallButtonDidClick(year: YearDataModel?) {
+        self.showAlert(title: "SPH MOBILE DATA USAGE", message: "Some quater(s) in \(year?.year ?? "") showed drop in data consumtion.")
     }
 }
 

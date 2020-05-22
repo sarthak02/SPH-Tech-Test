@@ -20,7 +20,7 @@ class ViewControllerPresenter: ViewControllerPresenterInput {
     func getUserDataSuccess(data: UsageData) {
         let quaterDataArr = self.getQuaterData(records: data.result?.records ?? [])
         let yearsUsageArray = self.getYearsUsageArray(quaterArray: quaterDataArr)
-        self.output?.refreshUsageView(data: yearsUsageArray)
+        self.output?.refreshUsageView(data: yearsUsageArray.sorted { $0.year > $1.year })
     }
     func getUserDataFailed(error: NSError?) {
         self.output?.getUserDataFailed(error: error?.localizedDescription ?? "Something went wrong. Please try again later.")

@@ -28,18 +28,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Lxx-qG-P3T">
-                                <rect key="frame" x="24" y="16" width="272" height="20.5"/>
+                                <rect key="frame" x="24" y="16" width="272" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UN3-EZ-Q5d">
-                                        <rect key="frame" x="0.0" y="0.0" width="272" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="224" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhs-fA-9Dm">
+                                        <rect key="frame" x="232" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Wv5-zl-q7m"/>
+                                            <constraint firstAttribute="width" constant="40" id="sEB-dl-JyQ"/>
+                                        </constraints>
+                                        <state key="normal" image="Scalefalling.png"/>
+                                        <connections>
+                                            <action selector="downfallButtonClicked" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cma-is-Afa"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="O9G-zb-HGf">
-                                <rect key="frame" x="24" y="36.5" width="272" height="76.5"/>
+                                <rect key="frame" x="24" y="56" width="272" height="57"/>
                             </stackView>
                         </subviews>
                         <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="24" bottom="16" trailing="24"/>
@@ -57,10 +68,14 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="dataDownfallButton" destination="lhs-fA-9Dm" id="bJU-wj-sQR"/>
                 <outlet property="quaterStackView" destination="O9G-zb-HGf" id="vuF-2D-9sQ"/>
                 <outlet property="yearLabel" destination="UN3-EZ-Q5d" id="0o3-nZ-Afn"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="123.54910714285714"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Scalefalling.png" width="40" height="40"/>
+    </resources>
 </document>
