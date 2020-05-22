@@ -12,7 +12,7 @@ Each entry shall display total data consumption for ONE year - not quarter.
 Display a clickable image in the entry if any quarter in a year demonstrates a decrease in volume data.
 
 ## Developer Notes:
-- **Architecture:** Swift Clean Architecture(VIP)
+- **Architecture:** Clean Swift Architecture(VIP)
 - **User Iterface:** Storyboard
 
 ###### Test case coverage:
