@@ -1,0 +1,6 @@
+framework module Pods_SPH_Tech_Test_SPH_Tech_TestUITests {
+  umbrella header "Pods-SPH-Tech-Test-SPH-Tech-TestUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
