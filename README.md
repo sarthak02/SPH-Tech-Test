@@ -21,6 +21,6 @@ Display a clickable image in the entry if any quarter in a year demonstrates a d
  - ViewControllerInteractor: 93.3
 
 ###### To run on mock data(Offline):
--SPHConstants.requstAPI.enableMockData = true
+- SPHConstants.requstAPI.enableMockData = true
 
 
