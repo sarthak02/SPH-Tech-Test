@@ -18,21 +18,21 @@ protocol ViewControllerOutput {
 class ViewController: UIViewController {
     @IBOutlet weak var tableView:UITableView! {
         didSet {
-            tableView.register(UINib(nibName: "YearDataTableViewCell", bundle: nil), forCellReuseIdentifier: "YearDataTableViewCell")
+            tableView.register(UINib(nibName: SPHConstants.Interface.yearDataCellIdentifier, bundle: nil), forCellReuseIdentifier: SPHConstants.Interface.yearDataCellIdentifier)
         }
     }
     var output: ViewControllerOutput?
     var yearsUsageArray: [YearDataModel] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "SPH Mobile Data Tracker"
+        self.title = SPHConstants.Strings.appTitle
         ViewControllerConfigurator.sharedInstance.configure(controller: self)
         MBProgressHUD.showAdded(to: self.view, animated: true)
         self.output?.getUsageData()
     }
     func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message,         preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: SPHConstants.Strings.okButtonTitle, style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 }
@@ -41,7 +41,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource{
         return self.yearsUsageArray.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "YearDataTableViewCell") as! YearDataTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: SPHConstants.Interface.yearDataCellIdentifier) as! YearDataTableViewCell
         cell.delegate = self
         cell.setData(data: self.yearsUsageArray[indexPath.row])
         return cell
@@ -58,13 +58,13 @@ extension ViewController: ViewControllerInput {
     func getUserDataFailed(error: String) {
         DispatchQueue.main.async {
             MBProgressHUD.hide(for: self.view, animated: true)
-            self.showAlert(title: "Error", message: error)
+            self.showAlert(title: SPHConstants.Strings.errorTitle, message: error)
         }
     }
 }
 extension ViewController: YearDataCellDelegate {
     func dataDownfallButtonDidClick(year: YearDataModel?) {
-        self.showAlert(title: "SPH MOBILE DATA USAGE", message: "Some quater(s) in \(year?.year ?? "") showed drop in data consumtion.")
+        self.showAlert(title: SPHConstants.Strings.SPHMobileDataUsageTitle, message: SPHConstants.Strings.getYearDataDownFallString(year: year?.year))
     }
 }
 

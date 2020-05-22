@@ -17,7 +17,7 @@ protocol ViewControllerInteratorOutput {
 class ViewControllerInterator: ViewControllerInteratorInput {
     var output: ViewControllerInteratorOutput?
     func getUsageData() {
-        SPHConstants.enableMockData ? self.getMockUsageData() : self.getLiveUsageData()
+        SPHConstants.requstAPI.enableMockData ? self.getMockUsageData() : self.getLiveUsageData()
     }
     //To test offline
     func getMockUsageData() {

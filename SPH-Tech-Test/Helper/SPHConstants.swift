@@ -5,27 +5,25 @@
 //  Created by TA-002 on 22/05/20.
 //  Copyright © 2020 Sarthak.org. All rights reserved.
 //
-
 import Foundation
 struct SPHConstants {
-    static var enableMockData: Bool = false
-}
-//MARK:- Load Mock Data
-func load<T: Decodable>(_ filename: String) -> T {
-    let data: Data
-    guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
-        else {
-            fatalError("Couldn't find \(filename) in main bundle.")
+    struct Strings {
+        static let appTitle = "SPH Mobile Data Tracker"
+        static let okButtonTitle = "OK"
+        static let SPHMobileDataUsageTitle = "SPH MOBILE DATA USAGE"
+        static let errorTitle = "Error"
+        static let somethingWentWrong = "Something went wrong. Please try again later."
+        static func getYearDataDownFallString(year: String?) -> String {
+            return "Some quater(s) in \(year ?? "") showed drop in data consumtion."
+        }
     }
-    do {
-        data = try Data(contentsOf: file)
-    } catch {
-        fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
+    struct Interface {
+        static let yearDataCellIdentifier = "YearDataTableViewCell"
     }
-    do {
-        let decoder = JSONDecoder()
-        return try decoder.decode(T.self, from: data)
-    } catch {
-        fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
+    struct Font {
+        static let HelveticaNeue = "HelveticaNeue"
+    }
+    struct requstAPI {
+         static var enableMockData: Bool = false
     }
 }

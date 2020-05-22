@@ -9,10 +9,10 @@ import UIKit
 protocol YearDataCellDelegate {
     func dataDownfallButtonDidClick(year: YearDataModel?)
 }
-class YearDataTableViewCell: UITableViewCell {
+final class YearDataTableViewCell: UITableViewCell {
     @IBOutlet weak var yearLabel: UILabel! {
         didSet {
-            yearLabel.font = UIFont(name: "HelveticaNeue", size: 40)
+            yearLabel.font = UIFont(name: SPHConstants.Font.HelveticaNeue, size: 40)
             yearLabel.numberOfLines = 0
         }
     }
@@ -43,7 +43,7 @@ class YearDataTableViewCell: UITableViewCell {
     }
     func addQuaterData(quaterData: QuarterDataModel) {
         let quaterLabel = UILabel()
-        quaterLabel.font = UIFont(name: "HelveticaNeue", size: 20)
+        quaterLabel.font = UIFont(name: SPHConstants.Font.HelveticaNeue, size: 20)
         quaterLabel.numberOfLines = 0
         quaterLabel.text = quaterData.quarter + ": " + String(format: "%.5f", quaterData.volume_of_mobile_data)
         self.quaterStackView.addArrangedSubview(quaterLabel)

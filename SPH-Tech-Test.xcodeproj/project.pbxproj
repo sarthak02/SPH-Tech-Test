@@ -29,6 +29,7 @@
 		FBFBC6FB2477D639000E31BC /* YearDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFBC6F92477D639000E31BC /* YearDataTableViewCell.swift */; };
 		FBFBC6FC2477D639000E31BC /* YearDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBFBC6FA2477D639000E31BC /* YearDataTableViewCell.xib */; };
 		FBFBC6FE2477DF37000E31BC /* Scalefalling.png in Resources */ = {isa = PBXBuildFile; fileRef = FBFBC6FD2477DF37000E31BC /* Scalefalling.png */; };
+		FBFBC7002477E8AA000E31BC /* SPHHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFBC6FF2477E8AA000E31BC /* SPHHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		FBFBC6F92477D639000E31BC /* YearDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearDataTableViewCell.swift; sourceTree = "<group>"; };
 		FBFBC6FA2477D639000E31BC /* YearDataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YearDataTableViewCell.xib; sourceTree = "<group>"; };
 		FBFBC6FD2477DF37000E31BC /* Scalefalling.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Scalefalling.png; sourceTree = "<group>"; };
+		FBFBC6FF2477E8AA000E31BC /* SPHHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPHHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				FBFBC6E32477D533000E31BC /* SPHConstants.swift */,
+				FBFBC6FF2477E8AA000E31BC /* SPHHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				FBFBC6B32477D410000E31BC /* AppDelegate.swift in Sources */,
 				FBFBC6F52477D60E000E31BC /* UsageData.swift in Sources */,
 				FBFBC6B52477D410000E31BC /* SceneDelegate.swift in Sources */,
+				FBFBC7002477E8AA000E31BC /* SPHHelper.swift in Sources */,
 				FBFBC6F62477D60E000E31BC /* QuarterDataModel.swift in Sources */,
 				FBFBC6F02477D5DD000E31BC /* ViewControllerPresenter.swift in Sources */,
 			);
